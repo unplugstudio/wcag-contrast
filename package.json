@@ -1,6 +1,6 @@
 {
   "name": "@unplugstudio/wcag-contrast",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Utilities to work with WCAG color contrast",
   "license": "MIT",
   "repository": "https://github.com/unplugstudio/wcag-contrast",
