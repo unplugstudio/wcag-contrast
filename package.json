@@ -1,37 +1,34 @@
 {
-	"name": "@unplugstudio/wcag-contrast",
-	"version": "0.0.1",
-	"description": "Utilities to work with WCAG color contrast",
-	"license": "MIT",
-	"repository": "https://github.com/unplugstudio/wcag-contrast",
-	"author": {
-		"name": "Unplug Studio",
-		"email": "hello@unplug.studio",
-		"url": "http://unplug.studio"
-	},
-	"engines": {
-		"node": ">=8"
-	},
-	"scripts": {
-		"test": "echo \"Tests not implemented\"",
+  "name": "@unplugstudio/wcag-contrast",
+  "version": "0.0.1",
+  "description": "Utilities to work with WCAG color contrast",
+  "license": "MIT",
+  "repository": "https://github.com/unplugstudio/wcag-contrast",
+  "author": {
+    "name": "Unplug Studio",
+    "email": "hello@unplug.studio",
+    "url": "http://unplug.studio"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "test": "echo \"Tests not implemented\"",
     "lint": "stylelint scss",
     "release": "standard-version"
-	},
-	"files": [
-		"index.js"
-	],
-	"keywords": [
-		"color",
-		"contrast",
-		"scss",
-		"wcag"
-	],
-	"dependencies": {
-		"mathsass": "^0.10.1"
-	},
-	"devDependencies": {
-		"standard-version": "^7.0.0",
-		"stylelint": "^10.1.0",
-		"stylelint-config-sass-guidelines": "^6.0.0"
-	}
+  },
+  "keywords": [
+    "color",
+    "contrast",
+    "scss",
+    "wcag"
+  ],
+  "dependencies": {
+    "mathsass": "^0.10.1"
+  },
+  "devDependencies": {
+    "standard-version": "^7.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-sass-guidelines": "^6.0.0"
+  }
 }
