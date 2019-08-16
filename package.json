@@ -1,30 +1,29 @@
 {
-	"name": "unicorn-fun",
-	"version": "0.0.0",
-	"description": "My awesome module",
+	"name": "@unplugstudio/wcag-contrast",
+	"version": "0.0.1",
+	"description": "Utilities to work with WCAG color contrast",
 	"license": "MIT",
-	"repository": "YOUR-GITHUB-USERNAME/unicorn-fun",
+	"repository": "https://github.com/unplugstudio/wcag-contrast",
 	"author": {
-		"name": "YOUR NAME",
-		"email": "YOUR EMAIL",
-		"url": "YOUR WEBSITE"
+		"name": "Unplug Studio",
+		"email": "hello@unplug.studio",
+		"url": "http://unplug.studio"
 	},
 	"engines": {
 		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "echo \"Tests not implemented\""
 	},
 	"files": [
 		"index.js"
 	],
 	"keywords": [
-		"unicorn",
-		"fun"
+		"color",
+		"contrast",
+		"scss",
+		"wcag"
 	],
 	"dependencies": {},
-	"devDependencies": {
-		"ava": "^2.1.0",
-		"xo": "^0.24.0"
-	}
+	"devDependencies": {}
 }
