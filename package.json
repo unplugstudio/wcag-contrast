@@ -14,9 +14,10 @@
     "node": ">=8"
   },
   "scripts": {
-    "test": "echo \"Tests not implemented\"",
+    "docs:sass": "sassdoc2md src/scss -m readme.md -s Sass readme.md",
     "lint": "stylelint src/scss",
-    "release": "standard-version"
+    "release": "standard-version",
+    "test": "echo \"Tests not implemented\""
   },
   "keywords": [
     "color",
@@ -28,6 +29,7 @@
     "mathsass": "^0.10.1"
   },
   "devDependencies": {
+    "@hidoo/sassdoc-to-markdown": "^0.2.0",
     "standard-version": "^7.0.0",
     "stylelint": "^10.1.0",
     "stylelint-config-sass-guidelines": "^6.0.0"
