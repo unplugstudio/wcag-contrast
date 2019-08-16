@@ -1,0 +1,60 @@
+@import '~mathsass/dist/math';
+
+/// Determine the luminance of a color (between 0 and 1) according to the WCAG algorithm
+/// @param {Color} $color - Color
+/// @return {Number} Luminance: 1 is pure white, 0 is pure black
+/// @link https://css-tricks.com/snippets/sass/luminance-color-function/
+/// @link http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef Reference
+@function luminance($color) {
+  $colors: (
+    'red': red($color),
+    'green': green($color),
+    'blue': blue($color)
+  );
+
+  @each $name, $value in $colors {
+    $value: $value / 255;
+
+    @if $value < 0.03928 {
+      $value: $value / 12.92;
+    } @else {
+      $value: ($value + 0.055) / 1.055;
+      $value: pow($value, 2.4);
+    }
+
+    $colors: map-merge($colors, ($name: $value));
+  }
+
+  @return (map-get($colors, 'red') * 0.2126) + (map-get($colors, 'green') * 0.7152) + (map-get($colors, 'blue') * 0.0722);
+}
+
+/// Calculate the contrast ratio between two colors
+/// @param {Color} $back - Background color
+/// @param {Color} $front - Foreground (text) color
+/// @return {Number} The relative contrast of both colors
+/// @link https://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
+@function contrast($back, $front) {
+  $back-lum: luminance($back) + 0.05;
+  $fore-lum: luminance($front) + 0.05;
+
+  @return max($back-lum, $fore-lum) / min($back-lum, $fore-lum);
+}
+
+/// Determine whether to use dark or light text on top of given color
+/// @param {Color} $color - Background color
+/// @param {Number} $contrast [4.5] - How much contrast is considered enough
+/// @param {Boolean} $prefer-white [true] - Prefer white when both black and white have enough contrast
+/// @return {Color} #fff or #000
+/// @link https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html
+@function choose-contrast-color($color, $contrast: 4.5, $prefer-white: true) {
+  $choose-white: contrast($color, #fff) >= $contrast;
+  $choose-black: contrast($color, #000) >= $contrast;
+
+  @if ($choose-white and not $choose-black) {
+    @return #fff;
+  }
+  @if ($choose-black and not $choose-white) {
+    @return #000;
+  }
+  @return if($prefer-white, #fff, #000);
+}
