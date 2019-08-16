@@ -13,7 +13,8 @@
 		"node": ">=8"
 	},
 	"scripts": {
-		"test": "echo \"Tests not implemented\""
+		"test": "echo \"Tests not implemented\"",
+		"lint": "stylelint scss"
 	},
 	"files": [
 		"index.js"
@@ -25,5 +26,8 @@
 		"wcag"
 	],
 	"dependencies": {},
-	"devDependencies": {}
+	"devDependencies": {
+		"stylelint": "^10.1.0",
+		"stylelint-config-sass-guidelines": "^6.0.0"
+	}
 }

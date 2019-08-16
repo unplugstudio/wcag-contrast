@@ -1,0 +1,45 @@
+{
+	"extends": [
+	  "stylelint-config-sass-guidelines"
+	],
+	"rules": {
+	  "max-nesting-depth": [
+		3,
+		{
+		  "ignoreAtRules": [
+			"media",
+			"supports",
+			"include"
+		  ]
+		}
+	  ],
+	  "order/order": [
+		[
+		  "custom-properties",
+		  "dollar-variables",
+		  {
+			"type": "at-rule",
+			"name": "extend"
+		  },
+		  {
+			"type": "at-rule",
+			"name": "include",
+			"hasBlock": false
+		  },
+		  "declarations",
+		  {
+			"type": "at-rule",
+			"name": "include",
+			"hasBlock": true
+		  },
+		  "rules",
+		  {
+			"type": "at-rule",
+			"name": "include",
+			"parameter": "mq",
+			"hasBlock": true
+		  }
+		]
+	  ]
+	}
+  }
