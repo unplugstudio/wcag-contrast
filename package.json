@@ -1,6 +1,7 @@
 {
   "name": "@unplugstudio/wcag-contrast",
   "version": "0.1.0",
+  "main": "src/index.js",
   "description": "Utilities to work with WCAG color contrast",
   "license": "MIT",
   "repository": "https://github.com/unplugstudio/wcag-contrast",
@@ -14,7 +15,7 @@
   },
   "scripts": {
     "test": "echo \"Tests not implemented\"",
-    "lint": "stylelint scss",
+    "lint": "stylelint src/scss",
     "release": "standard-version"
   },
   "keywords": [
