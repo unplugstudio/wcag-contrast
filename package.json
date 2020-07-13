@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@hidoo/sassdoc-to-markdown": "^0.2.0",
-    "standard-version": "^7.0.0",
+    "standard-version": "^8.0.1",
     "stylelint": "^10.1.0",
     "stylelint-config-sass-guidelines": "^6.0.0"
   }
